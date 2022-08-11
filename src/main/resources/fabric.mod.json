@@ -8,12 +8,13 @@
   "authors": [
     "Motschen",
     "TeamMidnightDust",
-    "HypherionSA"
+    "HypherionSA",
+    "teddyxlandlee"
   ],
   "contact": {
     "homepage": "https://www.midnightdust.eu/",
-    "sources": "https://github.com/TeamMidnightDust/CustomSplashScreen",
-    "issues": "https://github.com/TeamMidnightDust/CustomSplashScreen/issues"
+    "sources": "https://github.com/teddyxlandlee/CustomSplashScreen",
+    "issues": "https://github.com/teddyxlandlee/CustomSplashScreen/issues"
   },
 
   "license": "MIT",
