@@ -36,6 +36,8 @@ dependencies {
 	}
 
 	modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
+
+	compileOnly 'xland.mcmodbridge:fa2fomapper:3.0.0'
 }
 
 processResources {
