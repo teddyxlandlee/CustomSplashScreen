@@ -67,7 +67,7 @@ public final class SplashScreenHooks {
     }
 
     @SuppressWarnings("unused")
-    public static void renderLogo(MinecraftClient client, MatrixStack matrices, int s /*FLOAD_11*/,
+    public static void renderLogo(MinecraftClient client, MatrixStack matrices, float s /*FLOAD_11*/,
                                   Identifier defaultLogo) {
         int m = client.getWindow().getScaledWidth() >> 1;
         int u = client.getWindow().getScaledHeight() >> 1;
