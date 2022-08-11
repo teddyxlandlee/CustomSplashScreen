@@ -156,7 +156,7 @@ void generateFMJ(UUID uuid) {
         ["fa2fomapper-4.0.0.jar", "${project.archivesBaseName}-${project.version}.jar",
         "${rootProject.archivesBaseName}-${rootProject.version}.jar"].forEach {s ->
             it.add(new JsonObject().with(true) {b ->
-                b.add("file", s)
+                b.addProperty("file", s)
             })
         }
     })
