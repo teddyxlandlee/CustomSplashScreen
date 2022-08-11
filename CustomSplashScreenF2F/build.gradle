@@ -210,6 +210,13 @@ task copyRemappedClass(type: Copy, dependsOn: jar) {
     into 'build/fabric-installer-prepare/'
 }
 
+task deleteOldCache {
+    doLast {
+        new File(buildDir, 'fabric-installer-prepare').deleteDir()
+        new File(buildDir, 'fabric-installer').deleteDir()
+    }
+}
+
 task generateInstallerFiles(type: Copy) {
     dependsOn copyRemappedClass, rootProject.copyRemappedClass
     from 'lib', "build/fabric-installer-prepare"
@@ -233,4 +240,5 @@ task generateInstallerJar(type: Jar, dependsOn: generateInstallerFiles) {
 
 build {
     dependsOn generateInstallerJar
+    finalizedBy deleteOldCache
 }
