@@ -58,7 +58,7 @@ public record AsmSplashScreen(UnaryOperator<Mapping.NodeElement> fieldMapper,
                         l.add(new VarInsnNode(ALOAD, 1));   // matrices, net/minecraft/class_4587
                         l.add(new VarInsnNode(FLOAD, 11));  // float s
                         l.add(mapField(GETSTATIC, C_TARGET, "field_2483", "Lnet/minecraft/class_2960;"));   // LOGO
-                        l.add(mapMethod(INVOKESTATIC, C_HOOKS, "renderLogo", "(Lnet/minecraft/class_310;Lnet/minecraft/class_4587;FLnet/minecraft/class_2960;"));
+                        l.add(mapMethod(INVOKESTATIC, C_HOOKS, "renderLogo", "(Lnet/minecraft/class_310;Lnet/minecraft/class_4587;FLnet/minecraft/class_2960;)V"));
                         m.instructions.insert(method, l);
                         disableBlendLabeled.setTrue();
                     } else if (sameMethod(method, mapMethod(INVOKESTATIC, C_RENDER_SYSTEM, "setShaderTexture", "(ILnet/minecraft/class_2960;)V"))) {
