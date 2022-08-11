@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "customsplashscreen-f2f",
+  "version": "${version}",
+  "custom": {
+    "modmenu": {
+      "badges": ["library"],
+      "parent": "customsplashscreen"
+    }
+  },
+  "license": "MIT"
+}

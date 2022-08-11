@@ -1,6 +1,6 @@
 package eu.midnightdust.customsplashscreen.mixin;
 
-import eu.midnightdust.customsplashscreen.hook.AsmSplashScreen;
+import eu.midnightdust.customsplashscreen.f2f.AsmSplashScreen;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.MappingResolver;
 import org.objectweb.asm.Type;
@@ -26,7 +26,7 @@ public class FabricCustomSplashScreenMixinPlugin implements IMixinConfigPlugin {
     private Mapping.NodeElement mapField(MappingResolver res, Mapping.NodeElement element) {
         Type owner = mapType(res, element.getOwner());
         String name = res.mapFieldName("intermediary", owner.getClassName(), element.getName(), element.getDesc().getDescriptor());
-        Type desc = mapMethodType(res, element.getDesc());
+        Type desc = mapType(res, element.getDesc());
         return Mapping.NodeElement.of(owner.getInternalName(), name, desc.getDescriptor());
     }
 

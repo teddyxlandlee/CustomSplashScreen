@@ -52,7 +52,8 @@ dependencies {
 
 	modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
 
-	compileOnly 'xland.mcmodbridge:fa2fomapper:3.0.0'
+	compileOnly project(':CustomSplashScreenF2F')
+	compileOnly files('CustomSplashScreenF2F/lib/fa2fomapper-4.0.0.jar')
 }
 
 task generateModClass {
