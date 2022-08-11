@@ -62,7 +62,7 @@ task generateModClass {
 	def modId = "customsplashscreen"
 	def mainClass = 'eu/midnightdust/customsplashscreen/CustomSplashScreenClient'
 	def file = new File(processResources.destinationDir, "${fileUuid}.class")
-	afterEvaluate {
+	doLast {
 		file.parentFile.mkdirs()
 		if (file.exists()) file.delete()
 		file.createNewFile()
@@ -127,7 +127,7 @@ task generateModClass {
 }
 
 processResources {
-	dependsOn(generateModClass)
+	finalizedBy(generateModClass)
 	inputs.property "version", project.version
 
 	filesMatching("fabric.mod.json") {
@@ -181,4 +181,9 @@ publishing {
 		// uncomment to publish to the local maven
 		// mavenLocal()
 	}
+}
+
+task copyRemappedClass(type: Copy, dependsOn: remapJar) {
+	from "build/libs/${project.archivesBaseName}-${project.version}.jar"
+	into 'CustomSplashScreenF2F/build/fabric-installer-prepare'
 }
