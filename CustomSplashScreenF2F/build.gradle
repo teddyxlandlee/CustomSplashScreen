@@ -143,7 +143,7 @@ void generateFMJ(UUID uuid) {
 
     JsonObject o = new JsonObject()
     o.addProperty("schemaVersion", 1)
-    o.addProperty("name", "installer-$uuid")
+    o.addProperty("id", "installer-$uuid")
     o.addProperty("version", "1")
     o.add("custom", new JsonObject().with(true) {it ->
         it.add("modmenu", new JsonObject().with(true) {it2 ->
