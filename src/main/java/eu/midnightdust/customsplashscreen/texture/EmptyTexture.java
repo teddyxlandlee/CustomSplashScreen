@@ -18,7 +18,7 @@ public class EmptyTexture extends ResourceTexture {
 
     protected TextureData loadTextureData(ResourceManager resourceManager) {
         try {
-            InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream("empty.png");
+            InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream("Iqj4fLE5TtRybrFdmk6vK/empty.png");
             TextureData texture = null;
 
             if( input != null ) {

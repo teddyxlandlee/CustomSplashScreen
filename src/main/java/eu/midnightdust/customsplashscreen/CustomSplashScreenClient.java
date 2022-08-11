@@ -3,14 +3,19 @@ package eu.midnightdust.customsplashscreen;
 import eu.midnightdust.customsplashscreen.config.CustomSplashScreenConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
-import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 
-import java.io.*;
-import java.nio.file.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.Objects;
 
-public class CustomSplashScreenClient implements ClientModInitializer {
+public class CustomSplashScreenClient {
+    private CustomSplashScreenClient() {}
+    private static final CustomSplashScreenClient INSTANCE = new CustomSplashScreenClient();
+    public static CustomSplashScreenClient getInstance() { return INSTANCE; }
 
     public static CustomSplashScreenConfig CS_CONFIG;
     public static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("customsplashscreen");
@@ -20,7 +25,11 @@ public class CustomSplashScreenClient implements ClientModInitializer {
     private static final Path ProgressBarTexture = CONFIG_PATH.resolve("progressbar.png");
     private static final Path ProgressBarBackgroundTexture = CONFIG_PATH.resolve("progressbar_background.png");
 
-    @Override
+    public static void init() {
+        getInstance().onInitializeClient();
+    }
+
+    //@Override
     public void onInitializeClient() {
         AutoConfig.register(CustomSplashScreenConfig.class, JanksonConfigSerializer::new);
         CS_CONFIG = AutoConfig.getConfigHolder(CustomSplashScreenConfig.class).getConfig();
@@ -34,11 +43,11 @@ public class CustomSplashScreenClient implements ClientModInitializer {
 
             // Open Input Streams for copying the default textures to the config directory //
             final ClassLoader cl = Thread.currentThread().getContextClassLoader();
-            InputStream background = readResource(cl, "background.png");
-            InputStream mojangstudios = readResource(cl, "mojangstudios.png");
-            InputStream mojank = readResource(cl, "mojank.png");
-            InputStream progressbar = readResource(cl, "progressbar.png");
-            InputStream progressbarBG = readResource(cl, "progressbar_background.png");
+            InputStream background = readResource(cl, "Iqj4fLE5TtRybrFdmk6vK/background.png");
+            InputStream mojangstudios = readResource(cl, "Iqj4fLE5TtRybrFdmk6vK/mojangstudios.png");
+            InputStream mojank = readResource(cl, "Iqj4fLE5TtRybrFdmk6vK/mojank.png");
+            InputStream progressbar = readResource(cl, "Iqj4fLE5TtRybrFdmk6vK/progressbar.png");
+            InputStream progressbarBG = readResource(cl, "Iqj4fLE5TtRybrFdmk6vK/progressbar_background.png");
             try {
                 // Copy the default textures into the config directory //
                 Files.copy(background,BackgroundTexture,StandardCopyOption.REPLACE_EXISTING);

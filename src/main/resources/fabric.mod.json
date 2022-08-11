@@ -23,7 +23,7 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "eu.midnightdust.customsplashscreen.CustomSplashScreenClient"
+      "eu.midnightdust.customsplashscreen.CustomSplashScreenClient::init"
     ],
     "modmenu": [
       "eu.midnightdust.customsplashscreen.config.ModMenuIntegration"

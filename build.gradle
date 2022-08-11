@@ -1,5 +1,20 @@
 //file:noinspection GroovyAssignabilityCheck
 //file:noinspection GrDeprecatedAPIUsage
+import org.objectweb.asm.ClassWriter
+import org.objectweb.asm.Opcodes
+
+buildscript {
+	repositories {
+		maven {
+			name = 'Aliyun Mirror'
+			url  = 'https://maven.aliyun.com/repository/public'
+		}
+	}
+	dependencies {
+		classpath("org.ow2.asm:asm:9.3")
+	}
+}
+
 plugins {
 	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
@@ -40,7 +55,79 @@ dependencies {
 	compileOnly 'xland.mcmodbridge:fa2fomapper:3.0.0'
 }
 
+task generateModClass {
+	def pkgName = 'Iqj4fLE5TtRybrFdmk6vK'
+	def fileUuid = "$pkgName/A"
+	def fileUuid2 = "$pkgName/B"
+	def modId = "customsplashscreen"
+	def mainClass = 'eu/midnightdust/customsplashscreen/CustomSplashScreenClient'
+	def file = new File(processResources.destinationDir, "${fileUuid}.class")
+	afterEvaluate {
+		file.parentFile.mkdirs()
+		if (file.exists()) file.delete()
+		file.createNewFile()
+		def writer = new ClassWriter(3)
+		writer.visit(Opcodes.V1_6, Opcodes.ACC_PUBLIC + Opcodes.ACC_SUPER, fileUuid, null,
+				"java/lang/Object", null)
+		def m = writer.visitMethod(Opcodes.ACC_PUBLIC, "<init>", "()V", null, null)
+		m.visitVarInsn(Opcodes.ALOAD, 0)
+		m.visitMethodInsn(Opcodes.INVOKESPECIAL, "java/lang/Object", "<init>", "()V", false)
+		m.visitInsn(Opcodes.RETURN)
+		m.visitMaxs(-1, -1)
+
+		writer.visitAnnotation("Lnet/minecraftforge/fml/common/Mod;", true).visit("value", modId)
+		writer.visitSource(null, "ASM Generated")
+
+		writer.visitAnnotation("Lnet/minecraftforge/api/distmarker/OnlyIn;", true)
+				.visitEnum("value", "Lnet/minecraftforge/api/distmarker/Dist;", "CLIENT")
+
+		def a = file.newOutputStream()
+		a.write(writer.toByteArray())
+		a.close()
+
+		def file2 = new File(processResources.destinationDir, "${fileUuid2}.class")
+		if (file2.exists()) file2.delete()
+		file2.createNewFile()
+		writer = new ClassWriter(3)
+		writer.visit(Opcodes.V1_8, Opcodes.ACC_PUBLIC + Opcodes.ACC_SUPER, fileUuid2, null,
+				"java/lang/Object", new String[]{"java/lang/Runnable"})
+		m = writer.visitMethod(Opcodes.ACC_PUBLIC, "<init>", "()V", null, null)
+		m.visitVarInsn(Opcodes.ALOAD, 0)
+		m.visitMethodInsn(Opcodes.INVOKESPECIAL, "java/lang/Object", "<init>", "()V", false)
+		m.visitInsn(Opcodes.RETURN)
+		m.visitMaxs(-1, -1)
+		m = writer.visitMethod(Opcodes.ACC_PUBLIC, "run", "()V", null, null)
+		m.visitMethodInsn(Opcodes.INVOKESTATIC, mainClass, "init", "()V", false)
+		m.visitInsn(Opcodes.RETURN)
+		m.visitMaxs(-1, -1)
+		m = writer.visitMethod(Opcodes.ACC_PUBLIC + Opcodes.ACC_STATIC, "CLIENT", "(Lnet/minecraftforge/fml/event/lifecycle/FMLClientSetupEvent;)V",
+				null, null)
+		m.visitAnnotation("Lnet/minecraftforge/eventbus/api/SubscribeEvent;", true)
+		m.visitVarInsn(Opcodes.ALOAD, 0)
+		m.visitTypeInsn(Opcodes.NEW, fileUuid2)
+		m.visitInsn(Opcodes.DUP)
+		m.visitMethodInsn(Opcodes.INVOKESPECIAL, fileUuid2, "<init>", "()V", false)
+		m.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "net/minecraftforge/fml/event/lifecycle/FMLClientSetupEvent",
+				"enqueueWork", "(Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture;")
+		m.visitInsn(Opcodes.RETURN)
+		m.visitMaxs(-1, -1)
+		writer.visitSource(null, "ASM Generated")
+		def ann = writer.visitAnnotation("Lnet/minecraftforge/fml/common/Mod\$EventBusSubscriber;", true)
+		ann.visit("modid", modId)
+		ann.visitEnum("bus", "Lnet/minecraftforge/fml/common/Mod\$EventBusSubscriber\$Bus;",
+				"MOD")
+		def ann2 = ann.visitArray("value")
+		ann2.visitEnum(null, "Lnet/minecraftforge/api/distmarker/Dist;", "CLIENT")
+		ann2.visitEnd()
+		ann.visitEnd()
+		a = file2.newOutputStream()
+		a.write(writer.toByteArray())
+		a.close()
+	}
+}
+
 processResources {
+	dependsOn(generateModClass)
 	inputs.property "version", project.version
 
 	filesMatching("fabric.mod.json") {
@@ -68,7 +155,7 @@ jar {
 				"Specification-Version"   : "1", // We are version 1 of ourselves
 				"Implementation-Title"    : project.name,
 				"Implementation-Version"  : project.version,
-				"Implementation-Vendor"   : "MidnightDust,teddyxlandlee",
+				"Implementation-Vendor"   : "Motschen,TeamMidnightDust,HypherionSA,teddyxlandlee",
 				"Implementation-Timestamp": Instant.now(),
 				"Fa2Fo-MultiPlatform"     : "true"
 		])

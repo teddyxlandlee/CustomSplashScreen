@@ -1,0 +1,43 @@
+v1	obfuscated	base	forge17
+CLASS	afk	net/minecraft/class_3300	net/minecraft/server/packs/resources/ResourceManager
+CLASS	drl	net/minecraft/class_1011	com/mojang/blaze3d/platform/NativeImage
+CLASS	ezn$a	net/minecraft/class_1049$class_4006	net/minecraft/client/renderer/texture/SimpleTexture$TextureImage
+CLASS	fba	net/minecraft/class_1084	net/minecraft/client/resources/metadata/texture/TextureMetadataSection
+CLASS	yh	net/minecraft/class_2960	net/minecraft/resources/ResourceLocation
+CLASS	ezn	net/minecraft/class_1049	net/minecraft/client/renderer/texture/SimpleTexture
+
+CLASS	aiy	net/minecraft/class_3532	net/minecraft/util/Mth
+CLASS	dxo	net/minecraft/class_310	net/minecraft/client/Minecraft
+CLASS	aik	net/minecraft/class_5253	net/minecraft/util/FastColor
+CLASS	aik$a	net/minecraft/class_5253$class_5254	net/minecraft/util/FastColor$ARGB32
+CLASS	epe	net/minecraft/class_757	net/minecraft/client/renderer/GameRenderer
+CLASS	dsj	net/minecraft/class_4587	com/mojang/blaze3d/vertex/PoseStack
+
+METHOD	drl	(Ljava/io/InputStream;)Ldrl;	a	method_4309	m_85058_
+
+METHOD	dxo	()Lezs;	M	method_1531	m_91097_
+CLASS	ezs	net/minecraft/class_1060	net/minecraft/client/renderer/texture/TextureManager
+METHOD	ezs	(Lyh;Lezf;)V	a	method_4616	m_118495_
+CLASS	ezf	net/minecraft/class_1044	net/minecraft/client/renderer/texture/AbstractTexture
+METHOD	dxo	()Ldrp;	aC	method_22683	m_91268_
+CLASS	drp	net/minecraft/class_1041	com/mojang/blaze3d/platform/Window
+METHOD	drp	()I	o	method_4486	m_85445_
+METHOD	drp	()I	p	method_4502	m_85446_
+METHOD	aik$a	(IIII)I	a	method_27764	m_13660_
+METHOD	aiy	(F)I	f	method_15386	m_14167_
+CLASS	dyn	net/minecraft/class_332	net/minecraft/client/gui/GuiComponent
+METHOD	dyn	(Ldsj;IIIIIIIFFII)V	a	method_25297	m_93187_
+METHOD	dyn	(Ldsj;IIIII)V	a	method_25294	m_93172_
+METHOD	epe	()Lepw;	s	method_34542	m_172817_
+
+CLASS	ece	net/minecraft/class_425	net/minecraft/client/gui/screens/LoadingOverlay
+METHOD	ece	(Ldxo;)V	a	method_18819	m_96189_
+FIELD	ece	Lyh;	c	field_2483	f_96160_
+METHOD	ece	(Ldsj;IIIIF)V	a	method_18103	m_96182_
+FIELD	ece	F	t	field_17770	f_96167_
+METHOD	ece	(Ldsj;IIF)V	a	method_25394	m_6305_
+FIELD	ece	Ljava/util/function/IntSupplier;	i	field_25041	f_96161_
+FIELD	ece	Ldxo;	p	field_18217	f_96163_
+
+CLASS	java/lang/Void	eu/midnightdust/customsplashscreen/hook/FabricConfigDir	eu/midnightdust/customsplashscreen/hook/ForgeConfigDir
+
