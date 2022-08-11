@@ -179,7 +179,7 @@ private static String bytes2str(byte[] b) {
     for (int i = 0; i < b.length; i++) {
         int j = b[i]
         if (j < 0) j += 256
-        sb << (j >> 4) << (j & 0x0F)
+        sb << "0123456789abcdef".charAt(j >> 4) << "0123456789abcdef".charAt(j & 0x0F)
     }
     return sb.toString()
 }
