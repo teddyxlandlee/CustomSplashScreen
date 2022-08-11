@@ -35,7 +35,8 @@
   ],
 
   "depends": {
-    "cloth-config2": "*"
+    "cloth-config2": "*",
+    "fa2fomapper": ">=4 <5"
   },
   "breaks": {
     "splash": "*",

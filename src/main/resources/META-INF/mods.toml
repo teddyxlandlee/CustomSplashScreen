@@ -1,0 +1,11 @@
+modLoader="javafml"
+loaderVersion="[38,)"   # Minecraft 1.18+
+license="MIT"
+issueTrackerURL="https://github.com/teddyxlandlee/CustomSplashScreen/issues"
+
+[[mods]]
+modId="customsplashscreen"
+version="${file.jarVersion}"
+displayName="Custom Splash Screen"
+authors="Motschen,TeamMidnightDust,HypherionSA,teddyxlandlee"
+description="Change minecraft's loading screen to your liking! Completely configurable!"

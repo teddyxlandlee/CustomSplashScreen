@@ -1,15 +1,15 @@
 package eu.midnightdust.customsplashscreen.texture;
 
-import net.fabricmc.loader.api.FabricLoader;
+import eu.midnightdust.customsplashscreen.hook.FabricConfigDir;
 import net.minecraft.client.resource.metadata.TextureResourceMetadata;
 import net.minecraft.client.texture.NativeImage;
 import net.minecraft.client.texture.ResourceTexture;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
 
 public class BlurredConfigTexture extends ResourceTexture {
     // Load textures from the config directory //
@@ -20,7 +20,8 @@ public class BlurredConfigTexture extends ResourceTexture {
 
     protected TextureData loadTextureData(ResourceManager resourceManager) {
         try {
-            InputStream input = new FileInputStream(FabricLoader.getInstance().getConfigDir()+"/customsplashscreen/"+this.location.toString().replace("minecraft:",""));
+            InputStream input = Files.newInputStream(FabricConfigDir.getConfigDir().resolve("customsplashscreen")
+                    .resolve(location.toString().replace("minecraft:", "").replace(':', '/')));
             TextureData texture;
 
             try {
