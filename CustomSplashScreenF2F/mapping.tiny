@@ -28,7 +28,7 @@ METHOD	aiy	(F)I	f	method_15386	m_14167_
 CLASS	dyn	net/minecraft/class_332	net/minecraft/client/gui/GuiComponent
 METHOD	dyn	(Ldsj;IIIIIIIFFII)V	a	method_25297	m_93187_
 METHOD	dyn	(Ldsj;IIIII)V	a	method_25294	m_93172_
-METHOD	dyn	(Ldsj;IIIIFFIIII)V	a	method_25290	m_93160_
+METHOD	dyn	(Ldsj;IIIIFFIIII)V	a	method_25293	m_93160_
 METHOD	epe	()Lepw;	s	method_34542	m_172817_
 
 CLASS	ece	net/minecraft/class_425	net/minecraft/client/gui/screens/LoadingOverlay
