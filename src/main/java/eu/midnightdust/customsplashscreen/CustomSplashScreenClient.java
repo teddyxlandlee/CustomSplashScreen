@@ -1,9 +1,9 @@
 package eu.midnightdust.customsplashscreen;
 
 import eu.midnightdust.customsplashscreen.config.CustomSplashScreenConfig;
+import eu.midnightdust.customsplashscreen.hook.FabricConfigDir;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
-import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +18,7 @@ public class CustomSplashScreenClient {
     public static CustomSplashScreenClient getInstance() { return INSTANCE; }
 
     public static CustomSplashScreenConfig CS_CONFIG;
-    public static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("customsplashscreen");
+    public static final Path CONFIG_PATH = FabricConfigDir.getConfigDir().resolve("customsplashscreen");
     private static final Path BackgroundTexture = CONFIG_PATH.resolve("background.png");
     private static final Path MojangTexture = CONFIG_PATH.resolve("mojangstudios.png");
     private static final Path MojankTexture = CONFIG_PATH.resolve("mojank.png");
