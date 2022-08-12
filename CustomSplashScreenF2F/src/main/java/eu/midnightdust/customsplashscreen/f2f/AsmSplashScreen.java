@@ -49,7 +49,7 @@ public record AsmSplashScreen(UnaryOperator<Mapping.NodeElement> fieldMapper,
             MutableBoolean disableBlendLabeled = new MutableBoolean();
             m.instructions.forEach(node -> {
                 if (node instanceof FieldInsnNode field &&
-                        sameField(field, mapField(INVOKESTATIC, C_TARGET, "field_25041", "Ljava/util/function/IntSupplier;"))) {
+                        sameField(field, mapField(GETSTATIC, C_TARGET, "field_25041", "Ljava/util/function/IntSupplier;"))) {
                     m.instructions.set(node, mapMethod(INVOKESTATIC, C_HOOKS, "backgroundColorSupplier", "()Ljava/util/function/IntSupplier;"));
                 } else if (node instanceof MethodInsnNode method) {
                     if (sameMethod(method, mapMethod(INVOKESTATIC, C_RENDER_SYSTEM, "disableBlend", "()V")) && !disableBlendLabeled.isTrue()) {

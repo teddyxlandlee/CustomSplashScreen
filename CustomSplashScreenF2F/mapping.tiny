@@ -39,6 +39,13 @@ METHOD	ece	(Ldsj;IIF)V	a	method_25394	m_6305_
 FIELD	ece	Ljava/util/function/IntSupplier;	i	field_25041	f_96161_
 FIELD	ece	Ldxo;	p	field_18217	f_96163_
 CLASS	epw	net/minecraft/class_5944	net/minecraft/client/renderer/ShaderInstance
+METHOD	com/mojang/blaze3d/systems/RenderSystem	(ILyh;)V	a	setShaderTexture	m_157456_
+METHOD	com/mojang/blaze3d/systems/RenderSystem	()V	b	enableBlend	m_69478_
+METHOD	com/mojang/blaze3d/systems/RenderSystem	(Ljava/util/function/Supplier;)V	c	setShader	m_157427_
+METHOD	com/mojang/blaze3d/systems/RenderSystem	(Lcom/mojang/blaze3d/platform/GlStateManager$SourceFactor;Lcom/mojang/blaze3d/platform/GlStateManager$DestFactor;)V	d	blendFunc	m_69408_
+METHOD	com/mojang/blaze3d/systems/RenderSystem	(FFFF)V	e	setShaderColor	m_157429_
+METHOD	com/mojang/blaze3d/systems/RenderSystem	()V	f	defaultBlendFunc	m_69453_
+METHOD	com/mojang/blaze3d/systems/RenderSystem	()V	g	disableBlend	m_69461_
 
 CLASS	$void1	eu/midnightdust/customsplashscreen/hook/FabricConfigDir	eu/midnightdust/customsplashscreen/hook/ForgeConfigDir
 
