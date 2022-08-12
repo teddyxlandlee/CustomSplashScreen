@@ -12,8 +12,8 @@ import java.io.InputStream;
 public class EmptyTexture extends ResourceTexture {
     // Empty texture used for hiding the default mojang logo when using other logo styles //
 
-    public EmptyTexture(Identifier location) {
-        super(location);
+    public EmptyTexture() {
+        super(new Identifier("empty.png"));
     }
 
     protected TextureData loadTextureData(ResourceManager resourceManager) {

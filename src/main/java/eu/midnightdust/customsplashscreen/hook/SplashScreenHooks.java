@@ -31,7 +31,7 @@ public final class SplashScreenHooks {
             client.getTextureManager().registerTexture(logo, new BlurredConfigTexture(new Identifier(CS_CONFIG.textures.MojangLogo)));
         }
         else {
-            client.getTextureManager().registerTexture(logo, new EmptyTexture(new Identifier("Iqj4fLE5TtRybrFdmk6vK/empty.png")));
+            client.getTextureManager().registerTexture(logo, new EmptyTexture());
         }
         client.getTextureManager().registerTexture(new Identifier(CS_CONFIG.textures.Aspect1to1Logo), new ConfigTexture(new Identifier(CS_CONFIG.textures.Aspect1to1Logo)));
         client.getTextureManager().registerTexture(new Identifier(CS_CONFIG.textures.BackgroundTexture), new ConfigTexture(new Identifier(CS_CONFIG.textures.BackgroundTexture)));
