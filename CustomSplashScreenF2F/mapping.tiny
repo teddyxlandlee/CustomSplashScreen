@@ -42,3 +42,7 @@ CLASS	epw	net/minecraft/class_5944	net/minecraft/client/renderer/ShaderInstance
 
 CLASS	$void1	eu/midnightdust/customsplashscreen/hook/FabricConfigDir	eu/midnightdust/customsplashscreen/hook/ForgeConfigDir
 
+METHOD	eu/midnightdust/customsplashscreen/texture/BlurredConfigTexture	(Lafk;)Lezn$a;	b	method_18153	m_6335_
+METHOD	eu/midnightdust/customsplashscreen/texture/ConfigTexture	(Lafk;)Lezn$a;	b	method_18153	m_6335_
+METHOD	eu/midnightdust/customsplashscreen/texture/EmptyTexture	(Lafk;)Lezn$a;	b	method_18153	m_6335_
+
