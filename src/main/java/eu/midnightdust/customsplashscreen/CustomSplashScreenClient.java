@@ -18,7 +18,10 @@ public class CustomSplashScreenClient {
     public static CustomSplashScreenClient getInstance() { return INSTANCE; }
 
     public static CustomSplashScreenConfig CS_CONFIG;
-    public static final Path CONFIG_PATH = FabricConfigDir.getConfigDir().resolve("customsplashscreen");
+    private static final class P {
+        static final Path CONFIG_PATH = FabricConfigDir.getConfigDir().resolve("customsplashscreen");
+    }
+    public static final Path CONFIG_PATH = P.CONFIG_PATH;
     private static final Path BackgroundTexture = CONFIG_PATH.resolve("background.png");
     private static final Path MojangTexture = CONFIG_PATH.resolve("mojangstudios.png");
     private static final Path MojankTexture = CONFIG_PATH.resolve("mojank.png");

@@ -40,7 +40,7 @@ public class CustomSplashScreenCtxProvider extends SimpleMappingContextProvider 
     }
 
     public static final Collection<String> REMAPPED_CLASSES = List.of(
-            "CustomSplashScreenClient",
+            "CustomSplashScreenClient$P",
             "hook.SplashScreenHooks",
             "texture.BlurredConfigTexture",
             "texture.ConfigTexture",

@@ -38,6 +38,7 @@ FIELD	ece	F	t	field_17770	f_96167_
 METHOD	ece	(Ldsj;IIF)V	a	method_25394	m_6305_
 FIELD	ece	Ljava/util/function/IntSupplier;	i	field_25041	f_96161_
 FIELD	ece	Ldxo;	p	field_18217	f_96163_
+CLASS	epw	net/minecraft/class_5944	net/minecraft/client/renderer/ShaderInstance
 
-CLASS	java/lang/Void	eu/midnightdust/customsplashscreen/hook/FabricConfigDir	eu/midnightdust/customsplashscreen/hook/ForgeConfigDir
+CLASS	$void1	eu/midnightdust/customsplashscreen/hook/FabricConfigDir	eu/midnightdust/customsplashscreen/hook/ForgeConfigDir
 
