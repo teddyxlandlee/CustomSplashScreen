@@ -26,12 +26,12 @@ import static net.minecraft.client.gui.DrawableHelper.fill;
 @SuppressWarnings("unused")
 public final class SplashScreenHooks {
     @SuppressWarnings("unused")
-    public static void onInit(MinecraftClient client, Identifier logo) {
+    public static void onInit(MinecraftClient client, @Deprecated Identifier logo) {
         if (CS_CONFIG.logoStyle == CustomSplashScreenConfig.LogoStyle.Mojang) {
-            client.getTextureManager().registerTexture(logo, new BlurredConfigTexture(new Identifier(CS_CONFIG.textures.MojangLogo)));
+            client.getTextureManager().registerTexture(new Identifier(CS_CONFIG.textures.MojangLogo), new BlurredConfigTexture(new Identifier(CS_CONFIG.textures.MojangLogo)));
         }
         else {
-            client.getTextureManager().registerTexture(logo, new EmptyTexture());
+            client.getTextureManager().registerTexture(new Identifier(CS_CONFIG.textures.MojangLogo), new EmptyTexture());
         }
         client.getTextureManager().registerTexture(new Identifier(CS_CONFIG.textures.Aspect1to1Logo), new ConfigTexture(new Identifier(CS_CONFIG.textures.Aspect1to1Logo)));
         client.getTextureManager().registerTexture(new Identifier(CS_CONFIG.textures.BackgroundTexture), new ConfigTexture(new Identifier(CS_CONFIG.textures.BackgroundTexture)));
@@ -68,7 +68,7 @@ public final class SplashScreenHooks {
 
     @SuppressWarnings("unused")
     public static void renderLogo(MinecraftClient client, MatrixStack matrices, float s /*FLOAD_11*/,
-                                  Identifier defaultLogo) {
+                                  @Deprecated Identifier defaultLogo) {
         int m = client.getWindow().getScaledWidth() >> 1;
         int u = client.getWindow().getScaledHeight() >> 1;
         double d = Math.min((double)client.getWindow().getScaledWidth() * 0.75,
@@ -78,7 +78,7 @@ public final class SplashScreenHooks {
         int w = (int)(e * .5);
 
         // Render the Logo
-        RenderSystem.setShaderTexture(0, CS_CONFIG.logoStyle == CustomSplashScreenConfig.LogoStyle.Aspect1to1 ? new Identifier(CS_CONFIG.textures.Aspect1to1Logo) : defaultLogo);
+        RenderSystem.setShaderTexture(0, CS_CONFIG.logoStyle == CustomSplashScreenConfig.LogoStyle.Aspect1to1 ? new Identifier(CS_CONFIG.textures.Aspect1to1Logo) : new Identifier(CS_CONFIG.textures.MojangLogo));
         RenderSystem.enableBlend();
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
 
