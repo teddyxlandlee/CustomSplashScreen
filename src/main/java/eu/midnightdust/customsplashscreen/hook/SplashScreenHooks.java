@@ -1,6 +1,5 @@
 package eu.midnightdust.customsplashscreen.hook;
 
-import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import eu.midnightdust.customsplashscreen.CustomSplashScreenClient;
 import eu.midnightdust.customsplashscreen.config.CustomSplashScreenConfig;
@@ -83,7 +82,7 @@ public final class SplashScreenHooks {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
 
         if (CS_CONFIG.logoStyle == CustomSplashScreenConfig.LogoStyle.Aspect1to1) {
-            RenderSystem.blendFunc(GlStateManager.SrcFactor.SRC_ALPHA, GlStateManager.DstFactor.ONE_MINUS_SRC_ALPHA);
+            RenderSystem.blendFunc(770, 771);
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, s);
             drawTexture(matrices, m - (w / 2), v, w, w, 0, 0, 512, 512, 512, 512);
         } else if (CS_CONFIG.logoStyle == CustomSplashScreenConfig.LogoStyle.Mojang) {
