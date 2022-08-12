@@ -45,4 +45,6 @@ CLASS	$void1	eu/midnightdust/customsplashscreen/hook/FabricConfigDir	eu/midnight
 METHOD	eu/midnightdust/customsplashscreen/texture/BlurredConfigTexture	(Lafk;)Lezn$a;	b	method_18153	m_6335_
 METHOD	eu/midnightdust/customsplashscreen/texture/ConfigTexture	(Lafk;)Lezn$a;	b	method_18153	m_6335_
 METHOD	eu/midnightdust/customsplashscreen/texture/EmptyTexture	(Lafk;)Lezn$a;	b	method_18153	m_6335_
-
+FIELD	eu/midnightdust/customsplashscreen/texture/BlurredConfigTexture	Lyh;	e	field_5224	f_118129_
+FIELD	eu/midnightdust/customsplashscreen/texture/ConfigTexture	Lyh;	e	field_5224	f_118129_
+FIELD	eu/midnightdust/customsplashscreen/texture/EmptyTexture	Lyh;	e	field_5224	f_118129_
