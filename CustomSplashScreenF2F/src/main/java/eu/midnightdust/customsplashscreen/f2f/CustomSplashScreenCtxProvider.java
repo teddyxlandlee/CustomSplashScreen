@@ -33,7 +33,7 @@ public class CustomSplashScreenCtxProvider extends SimpleMappingContextProvider 
 
     CustomSplashScreenCtxProvider() {
         super(REMAPPED_CLASSES.stream()
-                .map(c -> "eu.mednightdust.customsplashscreen." + c)
+                .map(c -> "eu.midnightdust.customsplashscreen." + c)
                 .map(c -> c.replace('.', '/'))
                 .collect(Collectors.toSet())
         );

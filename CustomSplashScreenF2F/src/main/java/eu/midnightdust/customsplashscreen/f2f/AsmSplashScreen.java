@@ -21,6 +21,8 @@ public record AsmSplashScreen(UnaryOperator<Mapping.NodeElement> fieldMapper,
     public ClassNode apply(ClassNode cn) {
         getMethod(cn, "method_18819", "(Lnet/minecraft/class_310;)V").ifPresent(m -> {          // init
             InsnList l = new InsnList();
+            l.add(mapMethod(INVOKESTATIC, "eu/midnightdust/customsplashscreen/CustomSplashScreenClient",
+                    "init", "()V"));
             l.add(new VarInsnNode(ALOAD, 0));
             l.add(mapField(GETSTATIC, C_TARGET, "field_2483", "Lnet/minecraft/class_2960;"));   // defaultLogo
             l.add(mapMethod(INVOKESTATIC, C_HOOKS, "onInit", "(Lnet/minecraft/class_310;Lnet/minecraft/class_2960;)V"));
